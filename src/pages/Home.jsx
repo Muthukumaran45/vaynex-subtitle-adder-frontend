@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
 import "../style/Home.css";
+import {BACKEND_API} from '../api'
 
 function Home({ onLogout }) {
   const [file, setFile] = useState(null);
@@ -53,7 +54,7 @@ function Home({ onLogout }) {
       formData.append("file", file);
 
       const response = await axios.post(
-        "http://localhost:8000/generate-subtitles",
+        `${BACKEND_API}/generate-subtitles`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );

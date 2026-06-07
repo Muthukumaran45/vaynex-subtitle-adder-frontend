@@ -1,0 +1,1 @@
+export const BACKEND_API='https://adding-subtitle-backend-2.onrender.com'
